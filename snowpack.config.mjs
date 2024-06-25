@@ -8,6 +8,9 @@ export default {
   },
   plugins: [
     /* ... */
+    ["snowpack-plugin-raw-file-loader", {
+      exts: [".md"],
+    }],
   ],
   routes: [
     /* Enable an SPA Fallback in development: */

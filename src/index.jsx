@@ -1,6 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
+import post from './resources/test.md'
+import Markdown from 'markdown-to-jsx';
+
+let md = post;
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <div>"HELLO REACT"</div>
+    <Markdown>{md}</Markdown>
 )
