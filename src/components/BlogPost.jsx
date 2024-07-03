@@ -17,7 +17,7 @@ class Post extends React.Component {
     render() {
         return (
             <div className='post'>
-                    <Markdown children={this.state.contents}/>;
+                    <Markdown children={this.state.contents}/>
                </div>
         );
     };
@@ -25,8 +25,7 @@ class Post extends React.Component {
 
 function revertPath(path) {
     let returnPath = path;
-    returnPath.replace(" ", "_");
-    returnPath.toLowerCase();
+    returnPath = returnPath.replace(" ", "_").toLowerCase();
     return returnPath;
 };
 
