@@ -11,6 +11,7 @@ export default {
     ["snowpack-plugin-raw-file-loader", {
       exts: [".md"],
     }],
+    ["./buildTools/postIndexerPlugin.js"],
   ],
   routes: [
     /* Enable an SPA Fallback in development: */
