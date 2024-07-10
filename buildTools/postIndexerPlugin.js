@@ -7,7 +7,7 @@ module.exports = function postIndexer() {
         name: 'post-indexer-plugin',
         async run() {
             if (process.env.NODE_ENV === 'development') {
-                await processFileNamesToJson('src');
+                await processFileNamesToJson('public');
             }
         },
         async optimize() {
@@ -22,12 +22,15 @@ async function processFileNamesToJson(outDir) {
             const dir = path.resolve('src/resources');
             let files = fs.readdirSync(dir);
 
-            const dirMap = {"isPosts": files.length > 0};
+            const dirMap = {
+                "isPosts": files.length > 0,
+                "posts": []
+            };
 
             files.forEach((file) => {
                 const filePath = dir + '/' + file;
                 const mdContent = matter.read(filePath);
-                dirMap[mdContent.data.title] = mdContent.data;
+                dirMap.posts.push(mdContent.data);
             })
 
             const postInfo = JSON.stringify(dirMap, null, 2);

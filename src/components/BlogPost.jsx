@@ -18,7 +18,7 @@ class Post extends React.Component {
         return (
             <div className='post'>
                     <Markdown children={this.state.contents}/>
-               </div>
+            </div>
         );
     };
 };
