@@ -6,15 +6,22 @@ class Page extends React.Component {
     constructor(props) {
         super(props);
         this.state = { 
-            post: <Post path="test" />
+            postPath: 'test.js'
         };
+    }
+
+    setPost = (path) => {
+        this.setState( {
+            postPath: path
+        });
+        console.log(this.state.postPath)
     }
 
     render() {
         return (
             <div className='main'>
-                {this.state.post}
-                <Navigation />
+                <Post path={this.state.postPath} />
+                <Navigation page={this} />
             </div>
         );
     }

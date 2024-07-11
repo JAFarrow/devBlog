@@ -8,11 +8,20 @@ class Post extends React.Component {
     }
 
     componentDidMount() {
-        const path = revertPath(this.props.path);
-        import(`../resources/${path}.js`).then((file) => {
-            this.setState({ contents: file.default.toString()});
-        })
+        this.fetchContents();
     };
+
+    componentDidUpdate(prevProps) {
+        if (prevProps.path != this.props.path) {
+            this.fetchContents();
+        }
+    }
+
+    fetchContents() {
+        import(`../resources/${this.props.path}`).then((file) => {
+            this.setState({ contents: file.default.toString() });
+        });
+    }
 
     render() {
         return (
@@ -21,12 +30,6 @@ class Post extends React.Component {
             </div>
         );
     };
-};
-
-function revertPath(path) {
-    let returnPath = path;
-    returnPath = returnPath.replace(" ", "_").toLowerCase();
-    return returnPath;
 };
 
 export default Post;

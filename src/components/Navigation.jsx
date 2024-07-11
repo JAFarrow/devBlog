@@ -4,9 +4,13 @@ import PostIndexService from '../services/PostIndexService.js';
 const jsonService = new PostIndexService();
 
 class Navigation extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = { index: null };
+    }
+
+    updatePage = (event) => {
+        this.props.page.setPost(event.target.getAttribute('path'));
     }
 
     componentDidMount() {
@@ -22,7 +26,7 @@ class Navigation extends React.Component {
             <div className="nav">
                 {this.state.index == null ? <p>Waiting..</p>:
                     this.state.index.posts.map((post, i) => {
-                        return <p key={i}>{post.title}</p>
+                        return <button key={i} path={post.path} onClick={this.updatePage}>{post.title}</button>
                     })}
             </div>
         );
