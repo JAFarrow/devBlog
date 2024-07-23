@@ -14,7 +14,6 @@ class Page extends React.Component {
         this.setState( {
             postPath: path
         });
-        console.log(this.state.postPath)
     }
 
     render() {
