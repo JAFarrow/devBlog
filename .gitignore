@@ -3,5 +3,3 @@ build
 node_modules
 public/resourceMap.json
 .firebase
-.firebaserc
-firebase.json
