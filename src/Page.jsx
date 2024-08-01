@@ -1,6 +1,8 @@
 import React from 'react';
 import Post from './components/BlogPost';
 import Navigation from './components/Navigation';
+import Header from './components/Header'
+import './App.css'
 
 class Page extends React.Component {
     constructor(props) {
@@ -18,9 +20,12 @@ class Page extends React.Component {
 
     render() {
         return (
-            <div className='main'>
-                <Post path={this.state.postPath} />
-                <Navigation page={this} />
+            <div className='App'>
+                <Header />
+                <main className="main">
+                    <Post path={this.state.postPath} />
+                    <Navigation page={this} />
+                </main>
             </div>
         );
     }
