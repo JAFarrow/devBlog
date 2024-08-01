@@ -1,5 +1,6 @@
 import React from 'react';
 import Markdown from 'markdown-to-jsx';
+import "./BlogPost.css"
 
 class Post extends React.Component {
     constructor(props) {

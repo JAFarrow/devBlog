@@ -1,5 +1,6 @@
 import React from 'react';
 import PostIndexService from '../services/PostIndexService.js';
+import './Navigation.css'
 
 const jsonService = new PostIndexService();
 
