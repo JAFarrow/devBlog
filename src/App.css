@@ -1,9 +1,10 @@
 main {
+    display: grid;
+    grid-template-columns: 5fr 1fr;
     grid-row: 2;
-    grid-column: span 2;
 }
 .App {
     display: grid;
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 100%;
     grid-template-rows: 60px auto;
 }
