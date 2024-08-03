@@ -1,5 +1,17 @@
 .nav {
     display: flex;
     flex-direction: column;
+    align-items: center;
     grid-column: 2;
+    margin-top: .5rem;
+}
+
+.navLink {
+    padding: .5rem 0 .5rem 0;
+    color: blue;
+}
+
+.navLink:hover {
+    cursor: pointer;
+    color: black;
 }

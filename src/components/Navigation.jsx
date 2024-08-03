@@ -27,7 +27,7 @@ class Navigation extends React.Component {
             <div className="nav">
                 {this.state.index == null ? <p>Waiting..</p>:
                     this.state.index.posts.map((post, i) => {
-                        return <button key={i} path={post.path} onClick={this.updatePage}>{post.title}</button>
+                        return <a class="navLink" key={i} path={post.path} onClick={this.updatePage}>{post.title}</a>
                     })}
             </div>
         );

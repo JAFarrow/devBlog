@@ -26,8 +26,8 @@ class Post extends React.Component {
 
     render() {
         return (
-            <div className='post'>
-                    <Markdown children={this.state.contents}/>
+            <div id='postContainer'>
+                    <Markdown className="post" children={this.state.contents}/>
             </div>
         );
     };
