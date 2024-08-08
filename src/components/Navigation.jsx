@@ -22,12 +22,24 @@ class Navigation extends React.Component {
         })
     }
 
+    getDisplayedPage() {
+        return this.props.page.getCurrentPost();
+    }
+
+    formatNavLink(key, post) {
+        return (
+            <a className="navLink" key={key} path={post.path} onClick={this.updatePage}>{post.title}</a>
+        )
+    }
+
     render() {
         return (
             <div className="nav">
                 {this.state.index == null ? <p>Waiting..</p>:
                     this.state.index.posts.map((post, i) => {
-                        return <a class="navLink" key={i} path={post.path} onClick={this.updatePage}>{post.title}</a>
+                        if (post.path != this.getDisplayedPage()) {
+                            return this.formatNavLink(i, post);
+                        }
                     })}
             </div>
         );

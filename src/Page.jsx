@@ -18,6 +18,10 @@ class Page extends React.Component {
         });
     }
 
+    getCurrentPost() {
+        return this.state.postPath;
+    }
+
     render() {
         return (
             <div className='App'>
