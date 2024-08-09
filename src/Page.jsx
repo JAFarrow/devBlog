@@ -8,7 +8,7 @@ class Page extends React.Component {
     constructor(props) {
         super(props);
         this.state = { 
-            postPath: 'test.js'
+            postPath: 'placeholder.js'
         };
     }
 
@@ -16,6 +16,10 @@ class Page extends React.Component {
         this.setState( {
             postPath: path
         });
+    }
+
+    getCurrentPost() {
+        return this.state.postPath;
     }
 
     render() {
