@@ -7,7 +7,7 @@ const jsonService = new PostIndexService();
 class Navigation extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { index: null };
+        this.state = { posts: null };
     }
 
     updatePage = (event) => {
@@ -17,7 +17,7 @@ class Navigation extends React.Component {
     componentDidMount() {
         jsonService.fetchAndParseLocalJson('/resourceMap.json').then((index) => {
             this.setState( {
-                index: index
+                posts: this.sortPostsByDate(index)
             } )
         })
     }
@@ -26,21 +26,33 @@ class Navigation extends React.Component {
         return this.props.page.getCurrentPost();
     }
 
-    formatNavLink(key, post) {
+    formatNavLink(post, key) {
         return (
             <a className="navLink" key={key} path={post.path} onClick={this.updatePage}>{post.title}</a>
         )
     }
 
+    sortPostsByDate(index) {
+        return [...index.posts].sort((a, b) => {
+            const dateA = new Date(a.date);
+            const dateB = new Date(b.date);
+            return dateB - dateA;
+        })
+    }
+
     render() {
+        console.log(this.state.posts);
         return (
             <div className="nav">
-                {this.state.index == null ? <p>Waiting..</p>:
-                    this.state.index.posts.map((post, i) => {
+                {this.state.posts == null ? (
+                    <p>Waiting..</p>
+                ) : (
+                    this.state.posts.map((post, i) => {
                         if (post.path != this.getDisplayedPage()) {
-                            return this.formatNavLink(i, post);
+                            return this.formatNavLink(post, i);
                         }
-                    })}
+                    })
+                )}
             </div>
         );
     };
