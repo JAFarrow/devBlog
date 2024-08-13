@@ -2,4 +2,4 @@
 
 ---
 
-## currently live with [firebase](https://devblog-51122.web.app/)! (Custom Domain Pending)
+## currently live with [firebase](https://www.blog.jfarrow.co.za)!
