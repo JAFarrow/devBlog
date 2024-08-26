@@ -41,7 +41,6 @@ class Navigation extends React.Component {
     }
 
     render() {
-        console.log(this.state.posts);
         return (
             <div className="nav">
                 {this.state.posts == null ? (
