@@ -5,3 +5,7 @@ header {
     grid-column: span 2;
     grid-row: 1;
 }
+
+header h1 {
+    color: var(--highlights);
+}
