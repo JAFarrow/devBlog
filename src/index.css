@@ -1,9 +1,17 @@
 :root {
     --main-background: #262626;
+    --highlights: #ffdd00;
+    --main-text: white;
+    --foreground: #313131;
 }
 
 html {
     font-size: 10px;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
 }
 
 body {

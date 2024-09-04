@@ -8,7 +8,7 @@ class Page extends React.Component {
     constructor(props) {
         super(props);
         this.state = { 
-            postPath: 'placeholder.js'
+            postPath: 'onBlogging.js'
         };
     }
 

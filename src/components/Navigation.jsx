@@ -43,6 +43,8 @@ class Navigation extends React.Component {
     render() {
         return (
             <div className="nav">
+                <h3 id='navHeader'>Posts</h3>
+                <hr id='navRule'/>
                 {this.state.posts == null ? (
                     <p>Waiting..</p>
                 ) : (
